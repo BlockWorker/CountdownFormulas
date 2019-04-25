@@ -1,0 +1,7 @@
+F:\Pers\Visual Studio\CoundownFormulas\CoundownFormulas\obj\Debug\CoundownFormulas.csprojAssemblyReference.cache
+F:\Pers\Visual Studio\CoundownFormulas\CoundownFormulas\obj\Debug\CoundownFormulas.csproj.CoreCompileInputs.cache
+F:\Pers\Visual Studio\CoundownFormulas\CoundownFormulas\bin\Debug\CoundownFormulas.exe.config
+F:\Pers\Visual Studio\CoundownFormulas\CoundownFormulas\bin\Debug\CoundownFormulas.exe
+F:\Pers\Visual Studio\CoundownFormulas\CoundownFormulas\bin\Debug\CoundownFormulas.pdb
+F:\Pers\Visual Studio\CoundownFormulas\CoundownFormulas\obj\Debug\CoundownFormulas.exe
+F:\Pers\Visual Studio\CoundownFormulas\CoundownFormulas\obj\Debug\CoundownFormulas.pdb
