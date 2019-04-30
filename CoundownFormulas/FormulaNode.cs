@@ -13,7 +13,7 @@ namespace CoundownFormulas {
         public FormulaNode(int number) {
             Roots.Add(this);
             Values.Add(number);
-            Operations.Add(number, new FormulaOperation(null, null, FormulaOperator.Constant, number));
+            Operations.Add(number, new FormulaOperation(number));
         }
 
         public FormulaNode(FormulaNode p1, FormulaNode p2) {
@@ -75,11 +75,22 @@ namespace CoundownFormulas {
         public FormulaOperation b;
         public FormulaOperator op;
         public int value;
+        public int length;
 
         public FormulaOperation(FormulaOperation a, FormulaOperation b, FormulaOperator op, int value) {
             this.a = a;
             this.b = b;
             this.op = op;
+            this.value = value;
+            length = Math.Max(a.length, b.length) + 1;
+        }
+
+        public FormulaOperation(int value) {
+            a = null;
+            b = null;
+            op = FormulaOperator.Constant;
+            this.value = value;
+            length = 0;
         }
     }
 }
