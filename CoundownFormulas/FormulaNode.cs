@@ -75,14 +75,12 @@ namespace CoundownFormulas {
         public FormulaOperation b;
         public FormulaOperator op;
         public int value;
-        public int length;
 
         public FormulaOperation(FormulaOperation a, FormulaOperation b, FormulaOperator op, int value) {
             this.a = a;
             this.b = b;
             this.op = op;
             this.value = value;
-            length = Math.Max(a.length, b.length) + 1;
         }
 
         public FormulaOperation(int value) {
@@ -90,7 +88,27 @@ namespace CoundownFormulas {
             b = null;
             op = FormulaOperator.Constant;
             this.value = value;
-            length = 0;
+        }
+
+        public override string ToString() {
+            string aStr, bStr;
+            switch (op) {
+                case FormulaOperator.Add:
+                    return a.ToString() + " + " + b.ToString();
+                case FormulaOperator.Subtract:
+                    return a.ToString() + " - " + b.ToString();
+                case FormulaOperator.Mutiply:
+                    aStr = a.op == FormulaOperator.Add || a.op == FormulaOperator.Subtract ? "(" + a.ToString() + ")" : a.ToString();
+                    bStr = b.op == FormulaOperator.Add || b.op == FormulaOperator.Subtract ? "(" + b.ToString() + ")" : b.ToString();
+                    return aStr + " * " + bStr;
+                case FormulaOperator.Divide:
+                    aStr = a.op == FormulaOperator.Add || a.op == FormulaOperator.Subtract ? "(" + a.ToString() + ")" : a.ToString();
+                    bStr = b.op == FormulaOperator.Add || b.op == FormulaOperator.Subtract ? "(" + b.ToString() + ")" : b.ToString();
+                    return aStr + " / " + bStr;
+                case FormulaOperator.Constant:
+                    return value.ToString();
+            }
+            return ""; //should never happen
         }
     }
 }

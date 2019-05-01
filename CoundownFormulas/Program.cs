@@ -7,11 +7,28 @@ using System.Threading.Tasks;
 namespace CoundownFormulas {
     public class Program {
         public static void Main(string[] args) {
-            var numbers = new int[] { 3, 12, 30, 56, 60, 90 };
-            GetTree(numbers);
+            int[] numbers;
+            while (true) {
+                Console.WriteLine("Available numbers, separated by one space: ");
+                var strings = Console.ReadLine().Split(' ');
+                try {
+                    numbers = strings.Select(s => int.Parse(s)).ToArray();
+                    break;
+                } catch {
+                    Console.WriteLine("Invalid input. Please try again.");
+                }
+            }
+            var tree = GetTree(numbers);
+            while (true) {
+                Console.Write("Number: ");
+                var input = Console.ReadLine();
+                if (input == "quit") break;
+                else if (int.TryParse(input, out int num)) Console.WriteLine(GetShortestFormula(tree, num));
+                else Console.WriteLine("Please input a valid number.");
+            }
         }
 
-        public static List<HashSet<int>> GetTree(int[] numbers) {
+        public static List<List<FormulaNode>> GetTree(int[] numbers) {
             var tree = new List<List<FormulaNode>>();
             var level = new List<FormulaNode>();
 
@@ -51,16 +68,16 @@ namespace CoundownFormulas {
                 tree.Add(level);
             }
 
-            var ret = new List<HashSet<int>>();
-            foreach (var lv in tree) {
-                var set = new HashSet<int>();
-                foreach (var node in lv) {
-                    foreach (int v in node.Values) set.Add(v);
-                }
-                ret.Add(set);
-            }
+            return tree;
+        }
 
-            return ret;
+        public static string GetShortestFormula(List<List<FormulaNode>> tree, int number) {
+            foreach (var level in tree) {
+                var node = level.FirstOrDefault(n => n.Values.Contains(number));
+                if (node == null) continue;
+                return number.ToString() + " = " + node.Operations[number].ToString();
+            }
+            return "No exact solution for " + number;
         }
     }
 }

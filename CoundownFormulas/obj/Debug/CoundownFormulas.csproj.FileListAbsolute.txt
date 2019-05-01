@@ -5,3 +5,10 @@ F:\Pers\Visual Studio\CoundownFormulas\CoundownFormulas\bin\Debug\CoundownFormul
 F:\Pers\Visual Studio\CoundownFormulas\CoundownFormulas\bin\Debug\CoundownFormulas.pdb
 F:\Pers\Visual Studio\CoundownFormulas\CoundownFormulas\obj\Debug\CoundownFormulas.exe
 F:\Pers\Visual Studio\CoundownFormulas\CoundownFormulas\obj\Debug\CoundownFormulas.pdb
+E:\Users\Alex\Documents\Dev\CountdownFormulas\CoundownFormulas\bin\Debug\CoundownFormulas.exe.config
+E:\Users\Alex\Documents\Dev\CountdownFormulas\CoundownFormulas\bin\Debug\CoundownFormulas.exe
+E:\Users\Alex\Documents\Dev\CountdownFormulas\CoundownFormulas\bin\Debug\CoundownFormulas.pdb
+E:\Users\Alex\Documents\Dev\CountdownFormulas\CoundownFormulas\obj\Debug\CoundownFormulas.csprojAssemblyReference.cache
+E:\Users\Alex\Documents\Dev\CountdownFormulas\CoundownFormulas\obj\Debug\CoundownFormulas.csproj.CoreCompileInputs.cache
+E:\Users\Alex\Documents\Dev\CountdownFormulas\CoundownFormulas\obj\Debug\CoundownFormulas.exe
+E:\Users\Alex\Documents\Dev\CountdownFormulas\CoundownFormulas\obj\Debug\CoundownFormulas.pdb
